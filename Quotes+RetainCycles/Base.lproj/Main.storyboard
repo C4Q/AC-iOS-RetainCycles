@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Yr-pJ-tfs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="Quotes_RetainCycles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWB-1I-scM">
+                                <rect key="frame" x="114.5" y="350.5" width="145" height="30"/>
+                                <state key="normal" title="Show me the quotes!"/>
+                                <connections>
+                                    <segue destination="VTz-b1-ug2" kind="show" id="2kK-vz-6zF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lWB-1I-scM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QKS-Xf-tNP"/>
+                            <constraint firstItem="lWB-1I-scM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rLr-S1-jov"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eqZ-io-Gbf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Quotes Table View Controller-->
+        <scene sceneID="TGZ-n7-hYr">
+            <objects>
+                <tableViewController id="VTz-b1-ug2" customClass="QuotesTableViewController" customModule="Quotes_RetainCycles" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Vk-rk-qZY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="89" id="RhM-My-F1e" customClass="QuoteTableViewCell" customModule="Quotes_RetainCycles" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="89"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RhM-My-F1e" id="ag3-qa-wD3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlm-z9-7Z8">
+                                            <rect key="frame" x="20" y="20" width="297" height="48.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-dZ-dNZ">
+                                            <rect key="frame" x="325" y="0.0" width="30" height="88.5"/>
+                                            <state key="normal" title="Like"/>
+                                            <connections>
+                                                <action selector="likeButtonPressed:" destination="RhM-My-F1e" eventType="touchUpInside" id="q9p-OV-A8u"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Jc9-dZ-dNZ" firstAttribute="leading" secondItem="Rlm-z9-7Z8" secondAttribute="trailing" constant="8" symbolic="YES" id="3rt-7R-o98"/>
+                                        <constraint firstAttribute="bottom" secondItem="Rlm-z9-7Z8" secondAttribute="bottom" constant="20" symbolic="YES" id="ELm-C4-NDX"/>
+                                        <constraint firstItem="Rlm-z9-7Z8" firstAttribute="leading" secondItem="ag3-qa-wD3" secondAttribute="leading" constant="20" symbolic="YES" id="Kqy-0t-IAd"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jc9-dZ-dNZ" secondAttribute="trailing" constant="20" symbolic="YES" id="Lep-31-eRP"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jc9-dZ-dNZ" secondAttribute="bottom" id="NYn-Bs-7cP"/>
+                                        <constraint firstItem="Jc9-dZ-dNZ" firstAttribute="leading" secondItem="Rlm-z9-7Z8" secondAttribute="trailing" constant="8" symbolic="YES" id="f8J-8V-xCV"/>
+                                        <constraint firstItem="Rlm-z9-7Z8" firstAttribute="top" secondItem="ag3-qa-wD3" secondAttribute="top" constant="20" symbolic="YES" id="ijf-N1-qyL"/>
+                                        <constraint firstItem="Jc9-dZ-dNZ" firstAttribute="top" secondItem="ag3-qa-wD3" secondAttribute="top" id="zhE-1c-mas"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="quoteLabel" destination="Rlm-z9-7Z8" id="9IR-dD-B4b"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VTz-b1-ug2" id="3Co-Az-ZLD"/>
+                            <outlet property="delegate" destination="VTz-b1-ug2" id="qZ4-ep-cNB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lK-ng-asT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c99-wP-6wQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Yr-pJ-tfs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sry-Wj-Vwg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JUt-T9-HNC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNt-Xo-VfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="134"/>
+        </scene>
+    </scenes>
+</document>
